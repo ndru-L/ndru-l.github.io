@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {margin: auto; text-align: left; font-family: "Space Grotesk", sans-serif;}
+body {margin: 0; font-family: "Space Grotesk", sans-serif;}
+
+/* BUTTONS */
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 14px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* .btn:hover {background: #eee;} */
+
+.insta {color: ghostwhite; font-size: 20px;}
+.twitt {color: ghostwhite; font-size: 20px;}
+.youtu {color: ghostwhite; font-size: 20px;}
+.danger {color: red;}
+.default {color: black;}
+
+/* TABS */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #black;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: black;
+  color:  ghostwhite;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 0px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 32.9%;
+  border: 1px solid #ccc;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: none;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #555555;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 0px 0px;
+  border: none; 
+  border-top: none;
+}
+
+/* IMAGE GRID */
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 0px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 20%; /* IE10 */
+  flex: 20%;
+  max-width: 20%;
+  padding: 0px 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 33%;
+    flex: 33%;
+    max-width: 33%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* MODAL WINDOW */
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  height: 80%;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.3s;
+  animation-name: zoom;
+  animation-duration: 0.3s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+
+<body style="background-color: black;">
+
+<!-- TEXT HEADER -->
+<div class="header">
+  <h1 style="color: #f8f8ff; font-size: 30px;">
+    <!--LOGO IMG-->
+    <img src="ring.png" style="width:100px; height:100px; vertical-align: middle;">
+    &nbsp ndru_L &nbsp
+    <a href="https://www.instagram.com/ndru_l"; style="vertical-align: middle;"><button class="btn insta">instagram</button></a>
+    <a href="https://twitter.com/ndru_LL"; style="vertical-align: middle;"><button class="btn twitt">twitter</button></a>
+    <a href="https://www.youtube.com/channel/UCN3u1K3tWYkhaCebd5OEUZQ"; style="vertical-align: middle;"><button class="btn youtu">youtube</button></a>
+  </h1>
+</div>
+
+<!-- TABS-->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Commissioned Work')" id="defaultOpen">Commissioned Work</button>
+  <button class="tablinks" onclick="openCity(event, 'Fan Art')">Fan Art</button>
+  <button class="tablinks" onclick="openCity(event, 'Personal Work')">Personal Work</button>
+</div>
+
+<!--TAB CONTENT-->
+<div id="Commissioned Work" class="tabcontent">
+  <!--GALLERY COLUMNS/ROWS-->
+  <div class="row"> 
+    <div class="column"> 
+      <img class="myImages" id="myImg" src="Comissions/inimini-b2u.gif" alt="'INIMINI - Back To You' Animated Visualizer/Spotify Canvas" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="Comissions/inimini-b2u.png" alt="'INIMINI - Back To You' Cover Art Render" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="Comissions/inimini-oot.gif" alt="'INIMINI - Out Of Touch' Animated Visualizer/Spotify Canvas" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="Comissions/inimini-oot.png" alt="'INIMINI - Out Of Touch' Cover Art Render" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="Comissions/graphixslayer-cryptoslayer.gif" alt="'CryptoSlayer' GraphixSlayer NFT Collaboration" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="Comissions/dreadpitt-venom.gif" alt="'Dread Pitt - Venom' Animated Visualizer" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="Comissions/dreadpitt-lifeblood.gif" alt="'Dread Pitt - Lifeblood' Animated Visualizer" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-blackflash.png" alt="'KRYPTT - Black Flash' Cover Art Render" style="width:100%;max-width:300px">
+    </div>
+  </div>
+</div>
+
+<div id="Fan Art" class="tabcontent">
+  <!--GALLERY COLUMNS/ROWS-->
+  <div class="row"> 
+    <div class="column"> 
+      <img class="myImages" id="myImg" src="FanArt/madeon-forever.gif" alt="Madeon/Good Faith Live inspired animation" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="FanArt/secretsky.gif" alt="Porter Robinson/Secret Sky inspired animation" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="FanArt/kintsugiskeleton.gif" alt="Mashup visualizer for 'DROELOE - KINTSUGI x TAILS & INVERNESS - SKELETON' https://www.youtube.com/watch?v=Shvd6uPDRcQ" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="FanArt/bitbird-ct.gif" alt="'bitbird create together' animated cover submission" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="FanArt/facethethrill.gif" alt="Mashup visualizer for 'Hikaru Utada & Skrillex - Face My Fears x NERO - The Thrill (Porter Robinson Remix)' https://www.youtube.com/watch?v=42kRdgHMneI" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="FanArt/loyalgoodnews.gif" alt="Mashup visualizer for 'Odesza - Loyal x Apashe - Good News' https://www.youtube.com/watch?v=WYhosasXBg8" style="width:100%;max-width:300px">
+    </div>
+    <div class="column">
+      <img class="myImages" id="myImg" src="FanArt/lightstallions.gif" alt="Mashup visualizer for 'Kanye West - All of the Lights x WAVEDASH - Stallions' https://www.youtube.com/watch?v=3yhnPtABbb8" style="width:100%;max-width:300px">
+    </div>
+  </div>
+</div>
+
+<!--GET MODAL-->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// create references to the modal...
+var modal = document.getElementById('myModal');
+// to all images -- note I'm using a class!
+var images = document.getElementsByClassName('myImages');
+// the image in the modal
+var modalImg = document.getElementById("img01");
+// and the caption in the modal
+var captionText = document.getElementById("caption");
+
+// Go through all of the images with our custom class
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  // and attach our click listener for this image.
+  img.onclick = function(evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
