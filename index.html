@@ -60,8 +60,7 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
   padding: 14px 0px;
   transition: 0.3s;
   font-size: 17px;
-  width: 32.9%;
-  border: 1px solid #ccc;
+  width: 49.5%;
 }
 
 /* Change background color of buttons on hover */
@@ -77,62 +76,51 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 0px 0px;
+  padding: 5px 0px;
   border: none; 
   border-top: none;
 }
 
-/* IMAGE GRID */
-
-.header {
-  text-align: center;
-  padding: 20px;
-}
-
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 0px;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 20%; /* IE10 */
-  flex: 20%;
-  max-width: 20%;
-  padding: 0px 4px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
+/* MASONRY GRID */
+img {
   width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 33%;
-    flex: 33%;
-    max-width: 33%;
+.masonry {
+  /*column-count: 4;*/
+  column-count: 5;
+  column-gap: 10px;
+}
+
+.masonry .mItem {
+  display: inline-block;
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .masonry {
+    column-count: 4;
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
+@media (max-width: 991px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .masonry {
+    column-count: 2;
   }
 }
 
 /* MODAL WINDOW */
 
 #myImg {
-  border-radius: 5px;
+  border-radius: 1px; /* corner radius */
   cursor: pointer;
   transition: 0.3s;
 }
@@ -158,6 +146,7 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
 .modal-content {
   margin: auto;
   display: block;
+  width: auto;
   height: 80%;
 }
 
@@ -170,7 +159,6 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
 }
 
 /* Add Animation */
@@ -228,7 +216,7 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
     <img src="ring.png" style="width:100px; height:100px; vertical-align: middle;">
     &nbsp ndru_L &nbsp
     <a href="https://www.instagram.com/ndru_l"; style="vertical-align: middle;"><button class="btn insta">instagram</button></a>
-    <a href="https://twitter.com/ndru_LL"; style="vertical-align: middle;"><button class="btn twitt">twitter</button></a>
+    <a href="https://twitter.com/ndru_L_visuals"; style="vertical-align: middle;"><button class="btn twitt">twitter</button></a>
     <a href="https://www.youtube.com/channel/UCN3u1K3tWYkhaCebd5OEUZQ"; style="vertical-align: middle;"><button class="btn youtu">youtube</button></a>
   </h1>
 </div>
@@ -236,51 +224,89 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
 <!-- TABS-->
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Commissioned Work')" id="defaultOpen">Commissioned Work</button>
-  <button class="tablinks" onclick="openCity(event, 'Fan Art')">Fan Art</button>
-  <button class="tablinks" onclick="openCity(event, 'Personal Work')">Personal Work</button>
+  <button class="tablinks" onclick="openCity(event, 'Fan Art/Personal Work')">Fan Art/Personal Work</button>
 </div>
 
 <!--TAB CONTENT-->
 <div id="Commissioned Work" class="tabcontent">
-  <!--GALLERY COLUMNS/ROWS-->
-  <div class="row"> 
-    <div class="column"> 
-      <img class="myImages" id="myImg" src="Comissions/inimini-b2u.gif" alt="'INIMINI - Back To You' Animated Visualizer/Spotify Canvas" style="width:100%;max-width:300px">
-      <img class="myImages" id="myImg" src="Comissions/inimini-b2u.png" alt="'INIMINI - Back To You' Cover Art Render" style="width:100%;max-width:300px">
+  <!--MASONRY-->
+  <div class="masonry">
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/xavi-robot2.gif" alt="Xavi Live Tour Visual" style="max-width:320px">
     </div>
-    <div class="column">
-      <img class="myImages" id="myImg" src="Comissions/inimini-oot.gif" alt="'INIMINI - Out Of Touch' Animated Visualizer/Spotify Canvas" style="width:100%;max-width:300px">
-      <img class="myImages" id="myImg" src="Comissions/inimini-oot.png" alt="'INIMINI - Out Of Touch' Cover Art Render" style="width:100%;max-width:300px">
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/xavi-grass.gif" alt="Xavi Live Tour Visual" style="max-width:320px">
     </div>
-    <div class="column">
-      <img class="myImages" id="myImg" src="Comissions/graphixslayer-cryptoslayer.gif" alt="'CryptoSlayer' GraphixSlayer NFT Collaboration" style="width:100%;max-width:300px">
-      <img class="myImages" id="myImg" src="Comissions/dreadpitt-venom.gif" alt="'Dread Pitt - Venom' Animated Visualizer" style="width:100%;max-width:300px">
-      <img class="myImages" id="myImg" src="Comissions/dreadpitt-lifeblood.gif" alt="'Dread Pitt - Lifeblood' Animated Visualizer" style="width:100%;max-width:300px">
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/xavi-hand.gif" alt="Xavi Live Tour Visual" style="max-width:320px">
     </div>
-    <div class="column">
-      <img class="myImages" id="myImg" src="Comissions/kryptt-blackflash.png" alt="'KRYPTT - Black Flash' Cover Art Render" style="width:100%;max-width:300px">
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/xavi-tree.gif" alt="Xavi Live Tour Visual" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/xavi-robot1.gif" alt="Xavi Live Tour Visual" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/inimini-b2u.gif" alt="'INIMINI - Back To You' Animated Visualizer/Spotify Canvas" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/inimini-b2u.png" alt="'INIMINI - Back To You' Single Cover Art Render" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Comissions/inimini-oot.png" alt="'INIMINI - Out Of Touch' Single Cover Art Render" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/inimini-oot.gif" alt="'INIMINI - Out Of Touch' Animated Visualizer/Spotify Canvas" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/graphixslayer-cryptoslayer.gif" alt="'CryptoSlayer' GraphixSlayer NFT Collaboration" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/ujei-outcold.gif" alt="'Ujei - Out Cold' Animated Visualizer" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/dreadpitt-lifeblood.gif" alt="'Dread Pitt - Lifeblood' Animated Visualizer" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/dreadpitt-venom.gif" alt="'Dread Pitt - Venom' Animated Visualizer" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/dreadpitt-okay.gif" alt="'Dread Pitt - Okay' Animated Visualizer" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-de.png" alt="'KRYPTT - DOMAIN EXPANSION' EP Cover Art Render" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-sd.png" alt="'KRYPTT - SLAUGHTER DEMON' Single Cover Art Render" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-bf.png" alt="'KRYPTT - BLACK FLASH' Single Cover Art Render" style="max-width:320px">
     </div>
   </div>
 </div>
 
-<div id="Fan Art" class="tabcontent">
-  <!--GALLERY COLUMNS/ROWS-->
-  <div class="row"> 
-    <div class="column"> 
+<div id="Fan Art/Personal Work" class="tabcontent">
+  <!--MASONRY=-->
+  <div class="masonry"> 
+    <div class="mItem"> 
       <img class="myImages" id="myImg" src="FanArt/madeon-forever.gif" alt="Madeon/Good Faith Live inspired animation" style="width:100%;max-width:300px">
+    </div>
+    <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/secretsky.gif" alt="Porter Robinson/Secret Sky inspired animation" style="width:100%;max-width:300px">
     </div>
-    <div class="column">
+    <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/kintsugiskeleton.gif" alt="Mashup visualizer for 'DROELOE - KINTSUGI x TAILS & INVERNESS - SKELETON' https://www.youtube.com/watch?v=Shvd6uPDRcQ" style="width:100%;max-width:300px">
+    </div>
+    <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/bitbird-ct.gif" alt="'bitbird create together' animated cover submission" style="width:100%;max-width:300px">
     </div>
-    <div class="column">
+    <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/facethethrill.gif" alt="Mashup visualizer for 'Hikaru Utada & Skrillex - Face My Fears x NERO - The Thrill (Porter Robinson Remix)' https://www.youtube.com/watch?v=42kRdgHMneI" style="width:100%;max-width:300px">
     </div>
-    <div class="column">
+    <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/loyalgoodnews.gif" alt="Mashup visualizer for 'Odesza - Loyal x Apashe - Good News' https://www.youtube.com/watch?v=WYhosasXBg8" style="width:100%;max-width:300px">
     </div>
-    <div class="column">
+    <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/lightstallions.gif" alt="Mashup visualizer for 'Kanye West - All of the Lights x WAVEDASH - Stallions' https://www.youtube.com/watch?v=3yhnPtABbb8" style="width:100%;max-width:300px">
     </div>
   </div>
