@@ -39,13 +39,16 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
 .insta {color: ghostwhite; font-size: 20px;}
 .twitt {color: ghostwhite; font-size: 20px;}
 .youtu {color: ghostwhite; font-size: 20px;}
-.danger {color: red;}
+.frees {color: ghostwhite; font-size: 20px;}
 .default {color: black;}
 
 /* TABS */
 
 /* Style the tab */
 .tab {
+  position: relative;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   background-color: #black;
 }
@@ -55,12 +58,12 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
   background-color: black;
   color:  ghostwhite;
   border: none;
+  border-radius: 10px;
   outline: none;
   cursor: pointer;
-  padding: 14px 0px;
-  transition: 0.3s;
+  padding: 15px 0px;
   font-size: 17px;
-  width: 49.5%;
+  width: 20%;
 }
 
 /* Change background color of buttons on hover */
@@ -70,7 +73,8 @@ body {margin: 0; font-family: "Space Grotesk", sans-serif;}
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #555555;
+  border-radius: 10px;
+  border: 2px solid #ccc;
 }
 
 /* Style the tab content */
@@ -215,16 +219,18 @@ img {
     <!--LOGO IMG-->
     <img src="ring.png" style="width:100px; height:100px; vertical-align: middle;">
     &nbsp ndru_L &nbsp
-    <a href="https://www.instagram.com/ndru_l"; style="vertical-align: middle;"><button class="btn insta">instagram</button></a>
-    <a href="https://twitter.com/ndru_L_visuals"; style="vertical-align: middle;"><button class="btn twitt">twitter</button></a>
-    <a href="https://www.youtube.com/channel/UCN3u1K3tWYkhaCebd5OEUZQ"; style="vertical-align: middle;"><button class="btn youtu">youtube</button></a>
+    <a href="https://www.instagram.com/ndru_l"; style="vertical-align: middle;"><button class="btn insta">[ instagram ]</button></a>
+    <a href="https://twitter.com/ndru_L_visuals"; style="vertical-align: middle;"><button class="btn twitt">[ twitter ]</button></a>
+    <a href="https://www.youtube.com/channel/UCN3u1K3tWYkhaCebd5OEUZQ"; style="vertical-align: middle;"><button class="btn youtu">[ youtube ]</button></a>
+    <a href="https://drive.google.com/drive/folders/1-oRJoRrmQDxG4t1mqmQItx8fxSeYRcRj?usp=sharing"; style="vertical-align: middle;"><button class="btn frees">[ free demo visuals ]</button></a>
   </h1>
 </div>
 
 <!-- TABS-->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Commissioned Work')" id="defaultOpen">Commissioned Work</button>
-  <button class="tablinks" onclick="openCity(event, 'Fan Art/Personal Work')">Fan Art/Personal Work</button>
+  <button class="tablinks" onclick="openTab(event, 'Commissioned Work')" id="defaultOpen">Commissioned Work</button>
+  <button class="tablinks" onclick="openTab(event, 'Fan Art/Personal Work')">Fan Art/Personal Work</button>
+  <button class="tablinks" onclick="openTab(event, 'October 2020 Render Challenge')">October 2020 Render Challenge</button>
 </div>
 
 <!--TAB CONTENT-->
@@ -264,6 +270,19 @@ img {
     <div class="mItem">
       <img class="myImages" id="myImg" src="Comissions/ujei-outcold.gif" alt="'Ujei - Out Cold' Animated Visualizer" style="max-width:320px">
     </div>
+    
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-de-animated.gif" alt="'KRYPTT - DOMAIN EXPANSION' EP Animated Visualizer/Spotify Canvas" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-sd.png" alt="'KRYPTT - SLAUGHTER DEMON' Single Cover Art Render" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-bf.png" alt="'KRYPTT - BLACK FLASH' Single Cover Art Render" style="max-width:320px">
+    </div>
+    <div class="mItem">
+      <img class="myImages" id="myImg" src="Comissions/kryptt-de.png" alt="'KRYPTT - DOMAIN EXPANSION' EP Cover Art Render" style="max-width:320px">
+    </div>
     <div class="mItem">
       <img class="myImages" id="myImg" src="Comissions/dreadpitt-lifeblood.gif" alt="'Dread Pitt - Lifeblood' Animated Visualizer" style="max-width:320px">
     </div>
@@ -272,15 +291,6 @@ img {
     </div>
     <div class="mItem">
       <img class="myImages" id="myImg" src="Comissions/dreadpitt-okay.gif" alt="'Dread Pitt - Okay' Animated Visualizer" style="max-width:320px">
-    </div>
-    <div class="mItem">
-      <img class="myImages" id="myImg" src="Comissions/kryptt-de.png" alt="'KRYPTT - DOMAIN EXPANSION' EP Cover Art Render" style="max-width:320px">
-    </div>
-    <div class="mItem">
-      <img class="myImages" id="myImg" src="Comissions/kryptt-sd.png" alt="'KRYPTT - SLAUGHTER DEMON' Single Cover Art Render" style="max-width:320px">
-    </div>
-    <div class="mItem">
-      <img class="myImages" id="myImg" src="Comissions/kryptt-bf.png" alt="'KRYPTT - BLACK FLASH' Single Cover Art Render" style="max-width:320px">
     </div>
   </div>
 </div>
@@ -295,19 +305,121 @@ img {
       <img class="myImages" id="myImg" src="FanArt/secretsky.gif" alt="Porter Robinson/Secret Sky inspired animation" style="width:100%;max-width:300px">
     </div>
     <div class="mItem">
-      <img class="myImages" id="myImg" src="FanArt/kintsugiskeleton.gif" alt="Mashup visualizer for 'DROELOE - KINTSUGI x TAILS & INVERNESS - SKELETON' https://www.youtube.com/watch?v=Shvd6uPDRcQ" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="FanArt/kintsugiskeleton.gif" alt="Mashup visualizer for 'DROELOE - KINTSUGI x TAILS & INVERNESS - SKELETON' <br>(full video on Youtube)" style="width:100%;max-width:300px">
     </div>
     <div class="mItem">
       <img class="myImages" id="myImg" src="FanArt/bitbird-ct.gif" alt="'bitbird create together' animated cover submission" style="width:100%;max-width:300px">
     </div>
     <div class="mItem">
-      <img class="myImages" id="myImg" src="FanArt/facethethrill.gif" alt="Mashup visualizer for 'Hikaru Utada & Skrillex - Face My Fears x NERO - The Thrill (Porter Robinson Remix)' https://www.youtube.com/watch?v=42kRdgHMneI" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="FanArt/facethethrill.gif" alt="Mashup visualizer for 'Hikaru Utada & Skrillex - Face My Fears x NERO - The Thrill (Porter Robinson Remix)' <br>(full video on Youtube)" style="width:100%;max-width:300px">
     </div>
     <div class="mItem">
-      <img class="myImages" id="myImg" src="FanArt/loyalgoodnews.gif" alt="Mashup visualizer for 'Odesza - Loyal x Apashe - Good News' https://www.youtube.com/watch?v=WYhosasXBg8" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="FanArt/loyalgoodnews.gif" alt="Mashup visualizer for 'Odesza - Loyal x Apashe - Good News' <br>(full video on Youtube)" style="width:100%;max-width:300px">
     </div>
     <div class="mItem">
-      <img class="myImages" id="myImg" src="FanArt/lightstallions.gif" alt="Mashup visualizer for 'Kanye West - All of the Lights x WAVEDASH - Stallions' https://www.youtube.com/watch?v=3yhnPtABbb8" style="width:100%;max-width:300px">
+      <img class="myImages" id="myImg" src="FanArt/lightstallions.gif" alt="Mashup visualizer for 'Kanye West - All of the Lights x WAVEDASH - Stallions' <br>(full video on Youtube)" style="width:100%;max-width:300px">
+    </div>
+  </div>
+</div>
+
+<div id="October 2020 Render Challenge" class="tabcontent">
+  <!--MASONRY-->
+  <div class="masonry">
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/0.png" alt="Render #0" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/1.png" alt="Render #1 - Gesaffelstein" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/2.png" alt="Render #2 - Virtual Self" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/3.png" alt="Render #3 - Deathpact" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/4.png" alt="Render #4 - Rezz" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/5.png" alt="Render #5 - Peekaboo" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/6.png" alt="Render #6 - Svdden Death" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/7.png" alt="Render #7 - Carpenter Brut" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/8.png" alt="Render #8 - Danger" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/9.png" alt="Render #9 - Droeloe" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/10.png" alt="Render #10 - Vincent" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/11.png" alt="Render #11 - Midnight Kids" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/12.png" alt="Render #12 - Madeon" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/13.png" alt="Render #13 - 13" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/14.png" alt="Render #14 - Apashe" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/15.png" alt="Render #15 - Moore Kismet" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/16.png" alt="Render #16 - Swarm" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/17.png" alt="Render #17 - 1788-L" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/18.png" alt="Render #18 - Lick" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/19.png" alt="Render #19 - Blanke" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/20.png" alt="Render #20 - Memba" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/21.png" alt="Render #21 - Burial" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/22.png" alt="Render #22 - G Jones" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/23.png" alt="Render #23 - Eprom" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/24.png" alt="Render #24 - Shades" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/25.png" alt="Render #25 - Groke" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/26.png" alt="Render #26 - Jack U" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/27.png" alt="Render #27 - Bronson" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/28.png" alt="Render #28 - Xavi" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/29.png" alt="Render #29 - Hex Cougar" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/30.png" alt="Render #30 - Baauer" style="max-width:320px">
+    </div>
+    <div class="mItem"> 
+      <img class="myImages" id="myImg" src="Oct2020/31.png" alt="Render #31 - RL Grime" style="max-width:320px">
     </div>
   </div>
 </div>
@@ -348,7 +460,7 @@ span.onclick = function() {
 </script>
 
 <script>
-function openCity(evt, cityName) {
+function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -358,7 +470,7 @@ function openCity(evt, cityName) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 document.getElementById("defaultOpen").click();
